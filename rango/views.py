@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rango.models import Category
-from rango.models import page
+from rango.models import Page
 
 from django.http import HttpResponse
 def index(request):
@@ -37,7 +37,7 @@ def show_category(request, category_name_slug):
         # We also add the category object from
         # the database to the context dictionary.
         # We'll use this in the template to verify that the category exists.
-        context_dict['category'] = category/
+        context_dict['category'] = category
     except Category.DoesNotExist:
         # We get here if we didn't find the specified category.
         # Don't do anything -
